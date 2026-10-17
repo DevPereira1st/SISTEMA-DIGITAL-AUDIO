@@ -1,0 +1,80 @@
+/* No arquivo GerenciadorFuncionarios.css, altere a classe .container para: */
+.container {
+  padding: 32px;
+  width: 100%; /* Ocupa tudo */
+  /* max-width: 1152px; <-- REMOVA OU APAGUE ESTA LINHA SE ELA EXISTIR */
+  box-sizing: border-box; 
+  font-family: Arial, sans-serif;
+  background-color: #020b30;
+  color: #e2e8f0;
+}
+
+.cartao-clicavel {
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cartao-clicavel:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+  border-color: #3b82f6; /* Borda acende de azul ao passar o rato */
+}
+
+@media (max-width: 767px) {
+  .cabecalho {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .container { padding: 16px; }
+}
+
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.cabecalho h1 { color: #ffffff; margin: 0; }
+
+.btn-novo {
+  background-color: #3b82f6; 
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+}
+
+.btn-novo:hover { background-color: #2563eb; }
+
+/* Grade responsiva inteligente para tela cheia */
+.grade-funcionarios {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+}
+
+@media (max-width: 400px) {
+  .grade-funcionarios { grid-template-columns: 1fr; }
+}
+
+/* O resto continua o mesmo... */
+.cartao-funcionario { background-color: #0a1645; border: 1px solid #1e293b; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); }
+.cartao-cabecalho { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1px solid #1e293b; padding-bottom: 12px; margin-bottom: 16px; }
+.info-funcionario { display: flex; flex-direction: column; }
+.nome-funcionario { font-size: 18px; font-weight: bold; color: #f1f5f9; margin: 0 0 4px 0; }
+.cargo-funcionario { color: #94a3b8; font-size: 14px; margin: 0; }
+.id-funcionario { color: #64748b; font-size: 14px; }
+.info-escala { display: grid; grid-template-columns: 1fr; gap: 12px; font-size: 14px; background-color: #0f1c4e; padding: 12px; border-radius: 6px; border: 1px solid #1e293b; }
+.titulo-escala { margin: 0; font-weight: bold; color: #cbd5e1; }
+.linha-escala { display: flex; justify-content: space-between; color: #e2e8f0; }
+.valor-destaque { font-weight: bold; color: #4ade80; }
+.sem-escala { padding: 20px; text-align: center; background-color: #0f1c4e; border-radius: 6px; color: #94a3b8; font-style: italic; font-size: 14px; }
+.rodape-cartao { display: flex; justify-content: flex-end; margin-top: 16px; padding-top: 16px; border-top: 1px solid #1e293b; }
+.btn-editar { background-color: transparent; color: #60a5fa; border: 1px solid #60a5fa; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 14px; transition: all 0.2s; }
+.btn-editar:hover { background-color: rgba(96, 165, 250, 0.1); }

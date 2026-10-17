@@ -1,0 +1,108 @@
+/* Fundo escuro transparente para o modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(2, 11, 48, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+/* Caixa de conteúdo do modal */
+.modal-conteudo {
+  background-color: #0a1645;
+  border: 1px solid #1e293b;
+  padding: 32px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  color: #ffffff;
+}
+
+.modal-conteudo h2 {
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-size: 20px;
+  color: #ffffff;
+  border-bottom: 1px solid #1e293b;
+  padding-bottom: 12px;
+}
+
+/* Grupos de formulário */
+.form-grupo {
+  margin-bottom: 16px;
+}
+
+.form-grupo label {
+  display: block;
+  font-size: 14px;
+  color: #94a3b8;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.form-grupo input {
+  width: 100%;
+  padding: 10px 14px;
+  background-color: #020b30;
+  border: 1px solid #1e293b;
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 14px;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-grupo input:focus {
+  border-color: #3b82f6;
+}
+
+/* Botões de ação do modal */
+.modal-acoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #1e293b;
+}
+
+.btn-cancelar {
+  background-color: transparent;
+  border: 1px solid #1e293b;
+  color: #94a3b8;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-cancelar:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+}
+
+.btn-salvar {
+  background-color: #3b82f6;
+  border: none;
+  color: #ffffff;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.btn-salvar:hover {
+  background-color: #2563eb;
+}

@@ -1,0 +1,212 @@
+/* Fundo global escuro para a página toda */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #020b30; 
+  font-family: Arial, Helvetica, sans-serif;
+  color: #e2e8f0; 
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.layout-principal {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: row; 
+}
+
+/* ----------------------------------
+   MENU LATERAL (DESKTOP)
+   ---------------------------------- */
+.menu-lateral {
+  background-color: #051142; 
+  border-right: 1px solid #1e293b;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  width: 260px;
+  min-height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 32px 16px;
+}
+
+.menu-titulo {
+  padding: 0 8px;
+  font-size: 12px;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+
+.aba-btn {
+  background: none;
+  border: none;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #94a3b8;
+  cursor: pointer;
+  text-align: left;
+  border-left: 4px solid transparent; 
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+  width: 100%;
+}
+
+.aba-btn:hover:not(.ativa) {
+  color: #f1f5f9;
+  background-color: #0a1645;
+}
+
+.aba-btn.ativa {
+  color: #60a5fa;
+  background-color: rgba(96, 165, 250, 0.1);
+  border-left: 4px solid #60a5fa;
+}
+
+/* ----------------------------------
+   ÁREA DE CONTEÚDO 
+   ---------------------------------- */
+.conteudo-principal {
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+  background-color: #020b30;
+  width: 100%; 
+  min-height: 100vh; 
+}
+
+@keyframes fadeInSuave {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animacao-fade {
+  animation: fadeInSuave 0.4s ease-out forwards;
+}
+
+/* =========================================
+   ESTILOS DO MENU HAMBÚRGUER E OVERLAY
+   ========================================= */
+.btn-hamburguer {
+  display: none;
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 1000; 
+  background-color: #0a1645;
+  color: #60a5fa;
+  border: 1px solid #1e293b;
+  padding: 8px 14px;
+  font-size: 22px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.cabecalho-menu-mobile {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding: 0 8px;
+}
+
+.btn-fechar-menu {
+  background: transparent;
+  border: none;
+  color: #ef4444;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.overlay-menu {
+  display: none;
+}
+
+/* =========================================
+   RESPONSIVIDADE: MODO MOBILE
+   ========================================= */
+@media (max-width: 768px) {
+  .layout-principal {
+    display: block !important; 
+    width: 100%; 
+  }
+
+  .conteudo-principal {
+    padding-top: 80px; 
+    padding-left: 16px;
+    padding-right: 16px;
+    width: 100%;
+    margin: 0 auto; 
+    box-sizing: border-box; 
+  }
+
+  .container, .dashboard-container {
+    max-width: 100%;
+    margin: 0 auto; 
+    box-sizing: border-box;
+  }
+
+  .btn-hamburguer {
+    display: block;
+  }
+  
+  .cabecalho-menu-mobile {
+    display: flex;
+  }
+
+  /* Gaveta do Menu */
+  .menu-lateral {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%); 
+    width: 280px !important;
+    height: 100vh;
+    background-color: #0a1645;
+    z-index: 9999; 
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 5px 0 25px rgba(0,0,0,0.8);
+    margin: 0;
+  }
+
+  .menu-lateral.aberto {
+    transform: translateX(0);
+  }
+
+  .menu-container {
+    padding-top: 24px;
+  }
+
+  .aba-btn {
+    border-left: none;
+    border-bottom: 1px solid transparent;
+  }
+  
+  .aba-btn.ativa {
+    border-left: none;
+    border-left: 4px solid #60a5fa; /* Mantém o destaque lateral na gaveta */
+  }
+
+  .overlay-menu {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9998; 
+    backdrop-filter: blur(3px); 
+  }
+}

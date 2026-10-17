@@ -1,0 +1,104 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-conteudo {
+  background-color: #0a1645;
+  border: 1px solid #1e293b;
+  border-radius: 8px;
+  padding: 32px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  animation: zoomIn 0.3s ease-out;
+  max-height: 90vh; /* Evita que o modal passe da tela se ficar muito grande */
+  overflow-y: auto; /* Adiciona barra de rolagem interna se necessário */
+}
+
+.modal-conteudo h2, .modal-conteudo h3 {
+  color: #ffffff;
+}
+
+.modal-conteudo h3 {
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-size: 16px;
+  border-bottom: 1px solid #1e293b;
+  padding-bottom: 8px;
+  color: #60a5fa; /* Azul claro para separar seções */
+}
+
+.form-grupo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.form-grupo label {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #cbd5e1;
+}
+
+.form-grupo input[type="text"],
+.form-grupo input[type="date"],
+.form-grupo input[type="time"],
+.form-grupo input[type="number"],
+.form-grupo select {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #1e293b;
+  background-color: #0f1c4e;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.form-grupo select {
+  cursor: pointer;
+  appearance: none; /* Remove a seta padrão para ficar mais bonito no dark mode */
+}
+
+.modal-acoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #1e293b;
+}
+
+.btn-cancelar {
+  background-color: transparent;
+  color: #94a3b8;
+  border: 1px solid #475569;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-cancelar:hover {
+  background-color: #1e293b;
+}
+
+.btn-salvar {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-salvar:hover {
+  background-color: #2563eb;
+}

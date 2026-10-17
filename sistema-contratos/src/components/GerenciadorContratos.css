@@ -1,0 +1,139 @@
+/* Atualização do Container e Grid Responsivo */
+/* No arquivo GerenciadorContratos.css, altere a classe .container para: */
+.container {
+  padding: 32px;
+  width: 100%; /* Ocupa tudo */
+  /* max-width: 1152px; <-- REMOVA OU APAGUE ESTA LINHA SE ELA EXISTIR */
+  box-sizing: border-box; /* Impede que o padding crie barra de rolagem horizontal */
+  font-family: Arial, sans-serif;
+  background-color: #020b30;
+  color: #e2e8f0;
+}
+
+/* Nova classe para contratos que já passaram da data/hora */
+.contrato-passado {
+  opacity: 0.6;
+  border: 1px dashed #475569;
+  background-color: #070d2b; 
+  filter: grayscale(80%);
+  transition: all 0.3s ease;
+}
+
+.contrato-passado:hover {
+  opacity: 0.8;
+  filter: grayscale(40%);
+}
+
+.contrato-passado h2 {
+  color: #64748b; /* Texto do título mais cinza */
+}
+
+.etiqueta-concluido {
+  display: inline-block;
+  background-color: #334155;
+  color: #cbd5e1;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 12px;
+  margin-left: 12px;
+  vertical-align: middle;
+}
+
+/* Botão de Excluir Contrato */
+.btn-excluir {
+  background-color: transparent;
+  color: #ef4444; /* Vermelho */
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.btn-excluir:hover {
+  background-color: rgba(239, 68, 68, 0.1);
+  border-color: #ef4444;
+}
+
+/* Ajuste no cabeçalho do cartão para caber o botão ao lado do ID */
+.acoes-cabecalho {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Responsividade do Cabeçalho para Mobile */
+@media (max-width: 767px) {
+  .cabecalho {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start; /* Alinha o botão à esquerda no celular */
+  }
+  
+  .container {
+    padding: 16px; /* Menos margem no celular */
+  }
+}
+
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.cabecalho h1 {
+  color: #ffffff;
+  margin: 0;
+}
+
+.btn-novo {
+  background-color: #3b82f6;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s;
+  white-space: nowrap; /* Evita que o texto quebre de linha */
+}
+
+.btn-novo:hover {
+  background-color: #2563eb;
+}
+
+/* O segredo da grade responsiva tela toda: */
+.grade-contratos {
+  display: grid;
+  gap: 20px;
+  /* Cria colunas automáticas de no mínimo 350px. 
+     Se a tela for grande, cria 3 ou 4. Se for celular, vira 1 só. */
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+}
+
+/* Em celulares muito pequenos (menos de 350px), forçamos 1 coluna que ocupa 100% */
+@media (max-width: 400px) {
+  .grade-contratos {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* O resto do código dos cartões continua o mesmo de antes... */
+.cartao { background-color: #0a1645; border: 1px solid #1e293b; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); }
+.cartao-cabecalho { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1e293b; padding-bottom: 12px; margin-bottom: 12px; }
+.cartao-cabecalho h2 { margin: 0; color: #f1f5f9; font-size: 18px; }
+.id-contrato { color: #64748b; font-size: 14px; }
+.info-basica { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 14px; margin-bottom: 16px; color: #cbd5e1; }
+.sessao-itens { margin-bottom: 16px; }
+.titulo-itens { font-weight: bold; margin-bottom: 8px; color: #cbd5e1; font-size: 14px; }
+.etiquetas { display: flex; flex-wrap: wrap; gap: 8px; }
+.etiqueta { background-color: #0f1c4e; padding: 4px 8px; border-radius: 4px; font-size: 12px; border: 1px solid #1e293b; color: #94a3b8; }
+.rodape-cartao { display: flex; justify-content: space-between; align-items: center; margin-top: 16px; padding-top: 16px; border-top: 1px solid #1e293b; }
+.nome-arquivo { font-size: 14px; color: #94a3b8; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 150px;} /* Corta texto longo no celular */
+.sem-arquivo { font-size: 14px; color: #64748b; font-style: italic; }
+.btn-download { padding: 8px 16px; font-size: 14px; border-radius: 4px; border: none; font-weight: bold; transition: all 0.2s; }
+.btn-download.ativo { background-color: rgba(74, 222, 128, 0.1); color: #4ade80; cursor: pointer; border: 1px solid rgba(74, 222, 128, 0.3); }
+.btn-download.ativo:hover { background-color: rgba(74, 222, 128, 0.2); }
+.btn-download.inativo { background-color: #0f1c4e; color: #475569; cursor: not-allowed; border: 1px solid #1e293b; }

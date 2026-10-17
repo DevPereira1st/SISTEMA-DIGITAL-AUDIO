@@ -1,0 +1,124 @@
+/* Fundo escuro semitransparente que cobre a tela toda */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* A janela do formulário em si */
+.modal-conteudo {
+  background-color: #0a1645;
+  border: 1px solid #1e293b;
+  border-radius: 8px;
+  padding: 32px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  animation: zoomIn 0.3s ease-out;
+}
+
+/* Animação de entrada (Zoom suave) */
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.modal-conteudo h2 {
+  margin-top: 0;
+  margin-bottom: 24px;
+  color: #ffffff;
+}
+
+.form-grupo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.form-grupo label {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #cbd5e1;
+}
+
+.form-grupo input[type="text"],
+.form-grupo input[type="date"],
+.form-grupo input[type="time"],
+.form-grupo input[type="file"] {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #1e293b;
+  background-color: #0f1c4e;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+/* Fundo do calendário nativo nos inputs date/time */
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+}
+
+/* Grade de checkboxes para os itens inclusos */
+.checkbox-grupo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  background-color: #0f1c4e;
+  padding: 12px;
+  border-radius: 4px;
+  border: 1px solid #1e293b;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.modal-acoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #1e293b;
+}
+
+.btn-cancelar {
+  background-color: transparent;
+  color: #94a3b8;
+  border: 1px solid #475569;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-cancelar:hover {
+  background-color: #1e293b;
+}
+
+.btn-salvar {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.btn-salvar:hover {
+  background-color: #2563eb;
+}

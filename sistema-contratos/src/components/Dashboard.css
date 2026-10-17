@@ -1,0 +1,107 @@
+.dashboard-container {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background-color: #0a1645;
+  border-radius: 8px;
+  border: 1px solid #1e293b;
+  margin-bottom: 16px;
+}
+
+.logo-texto {
+  font-size: 32px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #3b82f6, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cards-resumo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.card-financeiro {
+  background-color: #0a1645;
+  padding: 24px;
+  border-radius: 8px;
+  border: 1px solid #1e293b;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-financeiro p {
+  color: #94a3b8;
+  font-size: 14px;
+  margin: 0 0 8px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.card-financeiro h2 {
+  margin: 0;
+  font-size: 36px;
+}
+
+/* Cores específicas para Receita, Despesa e Lucro */
+.valor-receita { color: #60a5fa; }
+.valor-despesa { color: #ef4444; }
+.valor-lucro { color: #22c55e; }
+
+/* =========================================
+   RESPONSIVIDADE PARA MOBILE (TELEMÓVEIS)
+   ========================================= */
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .logo-texto {
+    font-size: 24px;
+  }
+
+  /* Faz os cartões ficarem um debaixo do outro */
+  .cards-resumo {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .card-financeiro {
+    padding: 16px;
+  }
+
+  .card-financeiro h2 {
+    font-size: 28px; /* Reduz um pouco o tamanho dos números grandes */
+  }
+
+  /* Cria um container com scroll horizontal para o gráfico não espremer nem vazar */
+  .grafico-responsivo-wrapper {
+    overflow-x: auto;
+    padding-bottom: 12px;
+  }
+
+  .grafico-min-width {
+    min-width: 500px; /* Garante que as 6 barras tenham espaço, criando um scroll suave para os lados se a tela for muito pequena */
+  }
+}
